@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model SimulationRun {
+  id            String   @id @default(uuid())
+  algorithm     String
+  totalDistance Float
+  nodesExplored Int
+  elapsedMs     Float
+  slots         String   // JSON string
+  vehicles      String   // JSON string
+  steps         String   // JSON string
+  createdAt     DateTime @default(now())
+}
